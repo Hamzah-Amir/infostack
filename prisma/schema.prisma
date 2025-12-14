@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Content {
+    id          String @id @default(cuid())
+    title       String
+    description String
+    category    String
+    source_url  String
+    raw_data    Json
+    ai_summary  String? @db.Text
+    createdAt   DateTime @default(now())
+}
+
+model Apis {
+    id          String @id @default(cuid())
+    name        String
+    base_url    String
+    category    String
+    description String
+    auth_type   String
+    example_request String?
+    example_response    String?
+}
