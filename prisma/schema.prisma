@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client"
+  output = "...src/generated"
 }
 
 datasource db {
@@ -8,7 +9,7 @@ datasource db {
 }
 
 model content {
-  id          String   @id default(cuid())
+  id          String   @id @default(cuid())
   title       String
   description String
   category    String
