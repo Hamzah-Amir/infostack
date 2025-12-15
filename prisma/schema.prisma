@@ -8,26 +8,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Content {
-    id          String @id @default(cuid())
-    title       String
-    description String
-    category    String
-    source_url  String
-    source      String
-    article     String @db.Text
-    images      Json 
-    ai_summary  String? @db.Text
-    createdAt   DateTime @default(now())
+model apis {
+  id               String  @id
+  name             String
+  base_url         String
+  category         String
+  description      String
+  auth_type        String
+  example_request  String?
+  example_response String?
 }
 
-model Apis {
-    id          String @id @default(cuid())
-    name        String
-    base_url    String
-    category    String
-    description String
-    auth_type   String
-    example_request String?
-    example_response    String?
+model content {
+  id          String   @id
+  title       String
+  description String
+  category    String
+  source_url  String
+  source      String
+  article     String   @db.Text
+  images      Json
+  ai_summary  String?  @db.Text
+  createdAt   DateTime @default(now())
 }
