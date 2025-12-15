@@ -13,7 +13,8 @@ model Content {
     category    String
     source_url  String
     source      String
-    raw_data    Json
+    article     String @db.Text
+    images      Json 
     ai_summary  String? @db.Text
     createdAt   DateTime @default(now())
 }
