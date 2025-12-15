@@ -26,9 +26,9 @@ async function autoFetchNews() {
             res.data.images[res.data.images.length - 1]   // last
         ];
 
+        
 
         const enrichedArticle = {
-            id: article.source.id,
             title: article.title,
             description: article.description,
             category: category,
@@ -37,12 +37,12 @@ async function autoFetchNews() {
             article: content,
             images: images
         }
-        // console.log(enrichedArticle)
         newsArray.push(enrichedArticle)
-        // const db = await prisma.content.create({
-        //     data:{ article }
-        // })
-        // console.log(db)
+        console.log(enrichedArticle)
+        const db = await prisma.content.create({
+            data: enrichedArticle
+        })
+        console.log(db)
     }
 }
 
