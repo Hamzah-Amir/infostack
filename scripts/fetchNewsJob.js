@@ -5,7 +5,7 @@ const apiKey = "40c59a6e79fbd98314053bbc6b0a9bb3925a0a77"
 
 async function autoFetchNews() {
     const newsArray = []
-    const category = 'politics'
+    const category = 'sports'
     const news = await fetchNews("trending_news", category)
     const articles = news.articles
 
@@ -25,8 +25,6 @@ async function autoFetchNews() {
             randomMiddleImage,          // random middle
             res.data.images[res.data.images.length - 2]   // last
         ];
-
-        
 
         const enrichedArticle = {
             title: article.title,
