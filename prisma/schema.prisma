@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client"
-  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -8,19 +7,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model apis {
-  id               String  @id
-  name             String
-  base_url         String
-  category         String
-  description      String
-  auth_type        String
-  example_request  String?
-  example_response String?
-}
-
 model content {
-  id          String   @id
+  id          String   @id default(cuid())
   title       String
   description String
   category    String
