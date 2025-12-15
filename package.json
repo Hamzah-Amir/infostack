@@ -2,6 +2,7 @@
   "name": "infostack",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -9,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/adapter-mariadb": "^7.1.0",
     "@prisma/client": "^7.1.0",
     "axios": "^1.13.2",
     "next": "15.0.7",
