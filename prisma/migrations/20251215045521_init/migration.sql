@@ -6,7 +6,8 @@ CREATE TABLE `Content` (
     `category` VARCHAR(191) NOT NULL,
     `source_url` VARCHAR(191) NOT NULL,
     `source` VARCHAR(191) NOT NULL,
-    `raw_data` JSON NOT NULL,
+    `article` TEXT NOT NULL,
+    `images` JSON NOT NULL,
     `ai_summary` TEXT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
