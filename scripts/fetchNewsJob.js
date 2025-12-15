@@ -38,7 +38,6 @@ async function autoFetchNews() {
             images: images
         }
         newsArray.push(enrichedArticle)
-        console.log(enrichedArticle)
         const db = await prisma.content.create({
             data: enrichedArticle
         })
